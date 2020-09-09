@@ -2,6 +2,8 @@
 
 .App {
   text-align: center;
+  background-color: #282c34;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-logo {
@@ -24,6 +26,12 @@
   background-color: #282c34;
   border-bottom: 2px solid #a163f5;
   /* font-family: 'peace_sansregular'; */
+}
+
+.sticky div{
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 
 .sticky h1, h2{
@@ -76,6 +84,12 @@ h2{
 
 .App-link {
   color: #61dafb;
+}
+
+footer{
+  padding: 2% 0 2% 0;
+  color: #efbad3;
+  border-top: 2px solid #efbad3;
 }
 
 @keyframes App-logo-spin {

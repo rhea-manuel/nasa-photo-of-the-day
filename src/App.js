@@ -29,6 +29,10 @@ function App() {
     backgroundAttachment: 'fixed'
   }
 
+  // function changePage(original, next){
+
+  // }
+
   // let expl = apodData.explanation
   // const split = expl.split('Teachers & Students')
   // explanation = split[0]
@@ -43,19 +47,29 @@ function App() {
 
   return (
     <div className="App">
-      <header className="sticky"><img src="https://i.imgur.com/fYHjFzv.png"></img><h1>Daily Space Facts</h1></header>
-      <section className="App-header">
-        <h2>{apodData.title}</h2>
-        <div style={apodImage}></div>
-        {/* <img src = {apodData.hdurl}></img> */}
-        {/* <p>
-          Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p> */}
-      <Explanation explanation={apodData.explanation}/>
-      {/* <div class="explanation">{apodData.explanation}</div> */}
+      <header className="sticky">
+        <div>
+          <img src="https://i.imgur.com/fYHjFzv.png"></img><h1>Daily Space Facts</h1>
+        </div>
+      </header>
 
-      </section>
+      <div id="homePage">
+
+        <section className="App-header">
+          <h2>{apodData.title}</h2>
+          <div style={apodImage}></div>
+          {/* <img src = {apodData.hdurl}></img> */}
+          {/* <p>
+          Read through the instructions in the README.md file to build your NASA
+          app! Have fun <span role="img" aria-label='go!'>🚀</span>!
+        </p> */}
+          <Explanation explanation={apodData.explanation} />
+          {/* <div class="explanation">{apodData.explanation}</div> */}
+
+        </section>
+      </div>
+
+      <footer><small>© 2020 Rhea Manuel</small></footer>
     </div>
   );
 }
