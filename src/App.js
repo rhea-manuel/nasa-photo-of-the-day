@@ -9,7 +9,7 @@ function App() {
   const [currentPage, changePage] = useState('home')
 
   useEffect(() => {
-    Axios.get('https://api.nasa.gov/planetary/apod?date=2015-09-07&api_key=3kLuegnPiJybN95328O7GpLQ0HRb4O6yJPRZ26nL')
+    Axios.get('https://api.nasa.gov/planetary/apod?api_key=3kLuegnPiJybN95328O7GpLQ0HRb4O6yJPRZ26nL')
       .then(response => {
         console.log(response.data)
         setApod(response.data)
