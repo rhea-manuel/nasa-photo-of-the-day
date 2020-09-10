@@ -3,9 +3,6 @@
 
 .App {
   text-align: center;
-  background-color: #282c34;
-  font-family: 'Open Sans', sans-serif;
-  color: #d8aac0;
 }
 
 .App-logo {
@@ -19,74 +16,8 @@
   }
 }
 
-.sticky{
-  background-color:white;
-  padding:0 2%;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  background-color: #282c34;
-  border-bottom: 2px solid #a163f5;
-  justify-content: space-between;
-  /* width: 100%; */
-  /* font-family: 'peace_sansregular'; */
-}
-
-.sticky div{
-  display: flex;
-  width: 30%;
-  align-items: center;
-}
-
-.sticky h1, h2, a{
-  /* font-family: 'Righteous', cursive; */
-  /* font-family: 'Kumbh Sans', sans-serif; */
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size:2.3rem;
-  text-transform: uppercase;
-  display: inline-block;
-  font-weight: normal;
-  /* background: rgb(239,186,211); */
-  /* background: linear-gradient(); */
-  background: -webkit-linear-gradient(-90deg, rgba(239,186,211,1) 0%, rgba(161,99,245,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-left:1%;
-}
-
-a{
-  cursor: pointer;
-  text-transform: capitalize;
-  /* justify-self: right; */
-  /* display: inline-block; */
-  /* padding: .5em 1.5em; */
-  /* text-align: right; */
-  /* padding-left: 1%; */
-}
-
-.links{
-  justify-content: space-around;
-}
-
-a:hover{
-  background: -webkit-linear-gradient(-90deg, rgba(255,255,255) 0%, rgba(255,255,255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 h2{
   font-size:2.8rem
-}
-
-.sticky img{
-  height:10vh;
-}
-
-.image{
-  height: 90vh;
-  width: 100%;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .explanation{
@@ -100,7 +31,7 @@ h2{
 
 .App-header {
   background-color: #282c34;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,12 +46,6 @@ h2{
 
 .App-link {
   color: #61dafb;
-}
-
-footer{
-  padding: 2% 0 2% 0;
-  color: #efbad3;
-  border-top: 2px solid #efbad3;
 }
 
 @keyframes App-logo-spin {

@@ -4,6 +4,9 @@ import Axios from "axios";
 import Home from './Home';
 import Earth from './Earth';
 
+import styled from 'styled-components';
+import {StyledApp, Header, Links, Logo, Footer} from './Elements';
+
 function App() {
   const [apodData, setApod] = useState([])
   const [currentPage, changePage] = useState('home')
@@ -17,26 +20,30 @@ function App() {
       .catch(error => console.log(error))
   }, [])
 
+  function openGithub(){
+    window.open("https://github.com/rhea-manuel", "_blank")
+  }
+
   return (
-    <div className="App">
-      <header className="sticky">
-        <div>
+    <StyledApp>
+      <Header>
+        <Logo onClick = { ()=> openGithub() }>
           <img src="https://i.imgur.com/fYHjFzv.png"></img><h1>Daily Space Facts</h1>
           
-        </div>
+        </Logo>
 
         
-        <div className = "links">
+        <Links>
         
         <a onClick={ ()=>changePage('home')}>Home</a>
         <a onClick = {()=>changePage('earth')}>Earth</a>
-        </div>
-      </header>
+        </Links>
+      </Header>
       {currentPage==='home' ? <Home explanation={apodData.explanation} title={apodData.title} hdurl={apodData.hdurl}/> : <Earth/>}
       
       
-      <footer><small>© 2020 Rhea Manuel</small></footer>
-    </div>
+      <Footer><small>© 2020 Rhea Manuel</small></Footer>
+    </StyledApp>
   );
 }
 

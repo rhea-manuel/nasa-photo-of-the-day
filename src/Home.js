@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import {Image, Section, StyledExplanation} from './Elements'
 
 export default function Explanation (props){
 
@@ -11,21 +12,15 @@ export default function Explanation (props){
 
     const newText = split[0]
 
-    const apodImage = {
-      backgroundImage: "url(" + props.hdurl + ")",
-    }
-
     return(
-        <div id="homePage">
-
-          <section className="App-header">
+        <div>
+          <Section>
             <h2>{props.title}</h2>
-            <div className="image" style={apodImage}></div>
-
-            <div className="explanation">
+            <Image hdurl={props.hdurl}></Image>
+            <StyledExplanation>
                 {newText}
-            </div>
-          </section>
+            </StyledExplanation>
+          </Section>
         </div>
         
     )

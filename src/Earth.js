@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import {Image, Section, StyledExplanation} from './Elements';
 
 export default function Earth() {
 
@@ -16,18 +17,14 @@ export default function Earth() {
             .catch(error => console.log(error))
     }, [])
 
-    const earthImage = {
-      backgroundImage: "url(" + epicData.url + ")",
-    }
-
-    if (!epicData.url){
+    if (!epicData.url) {
         return <div>Loading</div>
     }
 
     return (
         <div>
-            <img className="image" style={earthImage} src={epicData.url}></img>
-    <div>Date Taken: {epicData.date}</div>
+            <Image hdurl={epicData.url}></Image>
+            <div>Date Taken: {epicData.date}</div>
         </div>
     )
 
