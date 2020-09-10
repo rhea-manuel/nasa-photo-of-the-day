@@ -1,74 +1,40 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Axios from "axios";
-import Explanation from './Explanation';
+import Home from './Home';
+import Earth from './Earth';
 
 function App() {
   const [apodData, setApod] = useState([])
-  // API KEY: 3kLuegnPiJybN95328O7GpLQ0HRb4O6yJPRZ26nL
-  // URL for requests: https://api.nasa.gov/planetary/apod?api_key=3kLuegnPiJybN95328O7GpLQ0HRb4O6yJPRZ26nL
-  // Account Email: rheamanuel02@gmail.com
-  // Account ID: c598c0c9-c3a0-4744-957e-cdcc33f8257c
+  const [currentPage, changePage] = useState('home')
 
   useEffect(() => {
-    Axios.get('https://api.nasa.gov/planetary/apod?api_key=3kLuegnPiJybN95328O7GpLQ0HRb4O6yJPRZ26nL')
+    Axios.get('https://api.nasa.gov/planetary/apod?date=2015-09-07&api_key=3kLuegnPiJybN95328O7GpLQ0HRb4O6yJPRZ26nL')
       .then(response => {
         console.log(response.data)
-        // console.log(response.data.explanation)
         setApod(response.data)
-        // console.log(apodData)
       })
       .catch(error => console.log(error))
   }, [])
-
-  const apodImage = {
-    backgroundImage: "url(" + apodData.hdurl + ")",
-    height: '90vh',
-    width: '100%',
-    backgroundSize: 'cover',
-    backgroundAttachment: 'fixed'
-  }
-
-  // function changePage(original, next){
-
-  // }
-
-  // let expl = apodData.explanation
-  // const split = expl.split('Teachers & Students')
-  // explanation = split[0]
-
-  // const apodImage = ({hdurl}) => {
-
-  //   return (
-  //     <img src= {hdurl}></img>
-  //   )
-
-  // }
 
   return (
     <div className="App">
       <header className="sticky">
         <div>
           <img src="https://i.imgur.com/fYHjFzv.png"></img><h1>Daily Space Facts</h1>
+          
+        </div>
+
+        
+        <div className = "links">
+        
+        <a onClick={ ()=>changePage('home')}>Home</a>
+        <a onClick = {()=>changePage('earth')}>Earth</a>
         </div>
       </header>
-
-      <div id="homePage">
-
-        <section className="App-header">
-          <h2>{apodData.title}</h2>
-          <div style={apodImage}></div>
-          {/* <img src = {apodData.hdurl}></img> */}
-          {/* <p>
-          Read through the instructions in the README.md file to build your NASA
-          app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-        </p> */}
-          <Explanation explanation={apodData.explanation} />
-          {/* <div class="explanation">{apodData.explanation}</div> */}
-
-        </section>
-      </div>
-
+      {currentPage==='home' ? <Home explanation={apodData.explanation} title={apodData.title} hdurl={apodData.hdurl}/> : <Earth/>}
+      
+      
       <footer><small>© 2020 Rhea Manuel</small></footer>
     </div>
   );
