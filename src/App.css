@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Open+Sans+Condensed:wght@300&display=swap');
+
+
 .App {
   text-align: center;
 }
@@ -13,6 +16,19 @@
   }
 }
 
+h2{
+  font-size:2.8rem
+}
+
+.explanation{
+  color:#d8aac0;
+  /* font-size:1.2rem; */
+  padding:5%;
+  letter-spacing: .05rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +38,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-header img{
+  height:50vh;
 }
 
 .App-link {
